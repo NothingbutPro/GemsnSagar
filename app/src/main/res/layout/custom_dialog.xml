@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="10dp"
+    app:cardCornerRadius="13dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    <TextView
+        android:id="@+id/nm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sort By"
+        android:gravity="center"
+        android:layout_marginTop="6dp"
+        android:textSize="8pt"
+        android:textColor="@color/blackk"/>
+
+    <ListView
+        android:id="@+id/list_sort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        />
+    <Button
+        android:id="@+id/button_ok"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:textSize="9pt"
+        android:background="@drawable/button"
+        android:textColor="@color/white"
+        android:layout_below="@+id/list_sort"
+        android:layout_centerHorizontal="true"
+        />
+    </RelativeLayout>
+
+
+<!--
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/nm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sort By"
+        android:gravity="center"
+        android:layout_marginTop="6dp"
+        android:textSize="8pt"
+        android:textColor="@color/blackk"/>
+
+    <LinearLayout
+        android:id="@+id/Lin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/nm"
+        android:layout_marginTop="10dp"
+        >
+
+    <TextView
+        android:id="@+id/name1"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nm"
+        android:text="Name (A - Z)"
+        android:layout_marginStart="20pt"
+        android:layout_marginLeft="30pt"
+        android:textSize="8pt"
+        android:textColor="@color/blackk"
+        android:layout_marginEnd="40pt"
+        android:layout_marginRight="20pt"
+        />
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Lin2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/Lin1"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/name2"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nm"
+            android:text="Name (Z - A)"
+            android:layout_marginStart="20pt"
+            android:layout_marginLeft="30pt"
+            android:textSize="8pt"
+            android:textColor="@color/blackk"
+            android:layout_marginEnd="40pt"
+            android:layout_marginRight="20pt"
+            />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Lin3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/Lin2"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/name3"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nm"
+            android:text="Price (Low > High)"
+            android:layout_marginStart="20pt"
+            android:layout_marginLeft="30pt"
+            android:textSize="8pt"
+            android:textColor="@color/blackk"
+            android:layout_marginEnd="40pt"
+            android:layout_marginRight="20pt"
+            />
+
+        <RadioButton
+            android:id="@+id/radio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Lin4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/Lin3"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/name4"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nm"
+            android:text="Price (High > Low) "
+            android:layout_marginStart="20pt"
+            android:layout_marginLeft="30pt"
+            android:textSize="8pt"
+            android:textColor="@color/blackk"
+            android:layout_marginEnd="40pt"
+            android:layout_marginRight="20pt"
+            />
+
+        <RadioButton
+            android:id="@+id/radio4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Lin5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/Lin4"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/name5"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nm"
+            android:text="Rating (Lowest)"
+            android:layout_marginStart="20pt"
+            android:layout_marginLeft="30pt"
+            android:textSize="8pt"
+            android:textColor="@color/blackk"
+            android:layout_marginEnd="40pt"
+            android:layout_marginRight="20pt"
+            />
+
+        <RadioButton
+            android:id="@+id/radio5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Lin6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/Lin5"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/name6"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nm"
+            android:text="Rating (Highest) "
+            android:layout_marginStart="20pt"
+            android:layout_marginLeft="30pt"
+            android:textSize="8pt"
+            android:textColor="@color/blackk"
+            android:layout_marginEnd="40pt"
+            android:layout_marginRight="20pt"
+            />
+
+        <RadioButton
+            android:id="@+id/radio6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/Lin7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/Lin6"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/name7"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nm"
+            android:text="Model (A > Z) "
+            android:layout_marginStart="20pt"
+            android:layout_marginLeft="30pt"
+            android:textSize="8pt"
+            android:textColor="@color/blackk"
+            android:layout_marginEnd="40pt"
+            android:layout_marginRight="20pt"
+            />
+
+        <RadioButton
+            android:id="@+id/radio7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/Lin8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/Lin7"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/name8"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nm"
+            android:text="Model (Z > A) "
+            android:layout_marginStart="20pt"
+            android:layout_marginLeft="30pt"
+            android:textSize="8pt"
+            android:textColor="@color/blackk"
+            android:layout_marginEnd="40pt"
+            android:layout_marginRight="20pt"
+            />
+
+        <RadioButton
+            android:id="@+id/radio8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:layout_gravity="center"
+            android:text="OK"
+            android:textColor="@color/blackk"
+            android:textStyle="bold"
+            android:textSize="8pt"
+            />
+
+    </LinearLayout>
+-->
+
+
+</android.support.v7.widget.CardView>

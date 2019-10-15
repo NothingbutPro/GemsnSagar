@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fontPath="http://schemas.android.com/tools"
+    android:id="@+id/mainButton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/border"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:id="@+id/badge_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_marginBottom="3dp"
+            android:id="@+id/relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/lnr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/idProductImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/aplogo" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.2dp"
+                android:background="@color/gray"
+                android:layout_below="@+id/lnr"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:visibility="gone"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+           android:layout_below="@+id/relative_layout"
+            android:background="#747272"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/idProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Medicine Syrup"
+                android:textColor="#383737"
+                android:textSize="11dp"
+                android:singleLine="true"
+                />
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/rupes"/>
+
+                <TextView
+                    android:id="@+id/idProductprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="500"
+                    android:textColor="#000"
+                    android:textSize="13dp"
+                    style="@style/FontView"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="65dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/chat"
+            android:gravity="end">
+
+            <TextView
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginBottom="3dp"
+                android:id="@+id/badge_notification_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:text="Sale"
+                android:textColor="#fff" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>
