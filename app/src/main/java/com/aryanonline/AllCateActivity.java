@@ -41,7 +41,7 @@ public class AllCateActivity extends AppCompatActivity {
         getDetlist = (RecyclerView)findViewById(com.aryanonline.R.id.getDetlist);
         Toolbar toolbar = (Toolbar) findViewById(com.aryanonline.R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(getResources().getString(com.aryanonline.R.string.app_name));
+      //  getSupportActionBar().setTitle(getResources().getString(com.aryanonline.R.string.app_name));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

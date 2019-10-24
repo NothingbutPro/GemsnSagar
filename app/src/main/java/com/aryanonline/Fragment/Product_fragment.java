@@ -27,6 +27,7 @@ import com.aryanonline.Config.BaseURL;
 import com.aryanonline.MainActivity;
 import com.aryanonline.Model.Category_model;
 import com.aryanonline.Model.Product_model;
+import com.aryanonline.R;
 import com.aryanonline.util.ConnectivityReceiver;
 import com.aryanonline.util.CustomVolleyJsonRequest;
 import com.google.gson.Gson;
@@ -244,7 +245,7 @@ public class Product_fragment extends Fragment {
         // TODO Add your menu entries here
         super.onCreateOptionsMenu(menu, inflater);
 
-        MenuItem search = menu.findItem(com.aryanonline.R.id.action_search);
+        MenuItem search = menu.findItem(R.id.action_search);
         search.setVisible(true);
         MenuItem check = menu.findItem(com.aryanonline.R.id.action_change_password);
         check.setVisible(false);
@@ -254,7 +255,7 @@ public class Product_fragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 
-            case com.aryanonline.R.id.action_search:
+            case R.id.action_search:
                 Fragment fm = new Search_fragment();
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(com.aryanonline.R.id.contentPanel, fm)

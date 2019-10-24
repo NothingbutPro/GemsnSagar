@@ -104,8 +104,10 @@ public class Search_fragment extends Fragment {
         Map<String, String> params = new HashMap<String, String>();
         params.put("search", search_text);
 
-        CustomVolleyJsonRequest jsonObjReq = new CustomVolleyJsonRequest(Request.Method.POST,
-                BaseURL.GET_PRODUCT_URL, params, new Response.Listener<JSONObject>() {
+//        CustomVolleyJsonRequest jsonObjReq = new CustomVolleyJsonRequest(Request.Method.POST,
+//                BaseURL.GET_PRODUCT_URL, params, new Response.Listener<JSONObject>() {
+            CustomVolleyJsonRequest jsonObjReq = new CustomVolleyJsonRequest(Request.Method.POST,
+               "http://enlightshopping.com/api/api/searchProduct?name="+search_text, params, new Response.Listener<JSONObject>() {
 
             @Override
             public void onResponse(JSONObject response) {

@@ -36,9 +36,12 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aryanonline.Basic_by_PArag.MyAstrology;
+import com.aryanonline.Basic_by_PArag.SerachFurtherActivity;
 import com.aryanonline.Config.BaseURL;
 import com.aryanonline.Fragment.Cart_fragment;
 import com.aryanonline.Fragment.Edit_profile_fragment;
@@ -46,6 +49,7 @@ import com.aryanonline.Fragment.Home_fragment;
 import com.aryanonline.Fragment.LocationFragment;
 import com.aryanonline.Fragment.MoreFragment;
 import com.aryanonline.Fragment.My_order_fragment;
+import com.aryanonline.Fragment.Search_fragment;
 import com.aryanonline.Fragment.Support_info_fragment;
 import com.aryanonline.Fragment.WishFragment;
 import com.aryanonline.util.ConnectivityReceiver;
@@ -59,11 +63,9 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         ConnectivityReceiver.ConnectivityReceiverListener {
-
-    private DrawerLayout mDrawerToggle2;
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
+    ImageView logot;
     RelativeLayout rll;
+    View header;
     FloatingActionButton fab1, fab2;
     int toggel = 0;
     BottomNavigationView navView;
@@ -93,13 +95,15 @@ public class MainActivity extends AppCompatActivity
 //        attachBaseContext(MainActivity.this);
 
         navView = findViewById(com.aryanonline.R.id.bottom_nav_view);
+        navView.getMenu().clear();
+        navView.inflateMenu(R.menu.bottom_nav_menu);
         // mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation_contact = navView.findViewById(com.aryanonline.R.id.navigation_contact);
         navigation_contact1 = navView.findViewById(com.aryanonline.R.id.navigation_contact1);
         Toolbar toolbar = (Toolbar) findViewById(com.aryanonline.R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(getResources().getString(com.aryanonline.R.string.app_name));
+//        getSupportActionBar().setTitle(getResources().getString(com.aryanonline.R.string.app_name));
 
 
         toolbar.setTitleTextColor(getResources().getColor(com.aryanonline.R.color.darkgrey));
@@ -158,12 +162,18 @@ public class MainActivity extends AppCompatActivity
 //        mDrawerToggle.setDrawerIndicatorEnabled(false);
         nav_menu = navigationView.getMenu();
 
-        View header = ((NavigationView) findViewById(com.aryanonline.R.id.nav_view)).getHeaderView(0);
-
+         header = ((NavigationView) findViewById(com.aryanonline.R.id.nav_view)).getHeaderView(0);
+        logot = (ImageView) header.findViewById(R.id.logot);
         iv_profile = (ImageView) header.findViewById(com.aryanonline.R.id.iv_header_img);
         tv_name = (TextView) header.findViewById(com.aryanonline.R.id.tv_header_name);
         tv_number = (TextView) header.findViewById(com.aryanonline.R.id.tv_header_moblie);
-
+        logot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                            sessionManagement.logoutSession();
+            finish();
+            }
+        });
         iv_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -306,6 +316,7 @@ public class MainActivity extends AppCompatActivity
                     fragmentManager.beginTransaction().replace(com.aryanonline.R.id.contentPanel, fm)
                             .addToBackStack(null).commit();
                     return true;
+
                 case com.aryanonline.R.id.navigation_contact:
                     if (toggel % 2 != 0) {
                         rll.setVisibility(View.GONE);
@@ -352,7 +363,8 @@ public class MainActivity extends AppCompatActivity
 
         if (sessionManagement.isLoggedIn()) {
             tv_number.setVisibility(View.VISIBLE);
-            nav_menu.findItem(com.aryanonline.R.id.nav_logout).setVisible(true);
+            logot.setVisibility(View.VISIBLE);
+//            nav_menu.findItem(com.aryanonline.R.id.nav_logout).setVisible(true);
             nav_menu.findItem(com.aryanonline.R.id.nav_user).setVisible(true);
         } else {
             tv_number.setVisibility(View.GONE);
@@ -364,7 +376,10 @@ public class MainActivity extends AppCompatActivity
                     startActivity(i);
                 }
             });
-            nav_menu.findItem(com.aryanonline.R.id.nav_logout).setVisible(false);
+            logot.setVisibility(View.GONE);
+            logot.setVisibility(View.GONE);
+//            header.findViewById(R.id.logot).setVisible(false);
+//            header.findItem(com.aryanonline.R.id.nav_user).setVisible(false);
             nav_menu.findItem(com.aryanonline.R.id.nav_user).setVisible(false);
         }
     }
@@ -378,7 +393,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void setTitle(String title) {
-        getSupportActionBar().setTitle(title);
+     //   getSupportActionBar().setTitle(title);
     }
 
     @Override
@@ -400,9 +415,25 @@ public class MainActivity extends AppCompatActivity
         MenuItem c_password = menu.findItem(com.aryanonline.R.id.action_change_password);
         MenuItem search = menu.findItem(com.aryanonline.R.id.action_search);
 
+//        searchView = menu.findItem(R.id.action_searchnon);
+//        search.setVisible(false);
+        search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem item) {
+                Toast.makeText(MainActivity.this, "Expanded", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem item) {
+                Toast.makeText(MainActivity.this, "Expanded 2", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
+
         item.setVisible(true);
         c_password.setVisible(false);
-        search.setVisible(false);
+//        search.setVisible(false);
 
         View count = item.getActionView();
         count.setOnClickListener(new View.OnClickListener() {
@@ -427,7 +458,7 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        if (id == com.aryanonline.R.id.action_cart) {
+        if (id ==R.id.action_cart) {
 
             if (dbcart.getCartCount() > 0) {
                 Fragment fm = new Cart_fragment();
@@ -437,6 +468,15 @@ public class MainActivity extends AppCompatActivity
             } else {
                 Toast.makeText(MainActivity.this, "No item in cart", Toast.LENGTH_SHORT).show();
             }
+            return true;
+        }     if (id ==R.id.action_search) {
+            Toast.makeText(MainActivity.this, "fisaohiof", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this , SerachFurtherActivity.class);
+            startActivity(intent);
+//            Fragment fm = new Search_fragment();
+//            FragmentManager fragmentManager = getFragmentManager();
+//            fragmentManager.beginTransaction().replace(com.aryanonline.R.id.contentPanel, fm)
+//                    .addToBackStack(null).commit();
             return true;
         }
 
@@ -449,6 +489,8 @@ public class MainActivity extends AppCompatActivity
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit();
         }
+
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -503,10 +545,21 @@ public class MainActivity extends AppCompatActivity
             fm = new WishFragment();
           /*  Intent intent = new Intent(MainActivity.this, WishlistActivity.class);
             startActivity(intent);*/
-        } else if (id == com.aryanonline.R.id.nav_logout) {
-            sessionManagement.logoutSession();
-            finish();
+        } else if (id == R.id.nav_astro)
+        {
+            Intent inten  = new Intent(MainActivity.this , MyAstrology.class);
+            startActivity(inten);
+
         }
+//        else
+//            if (id == com.aryanonline.R.id.nav_logout) {
+//            sessionManagement.logoutSession();
+//            finish();
+//        }
+//        else if (id == com.aryanonline.R.id.nav_astro) {
+//            Intent intent = new Intent(MainActivity.this , MyAstrology.class);
+//            startActivity(intent);
+//        }
 
         if (fm != null) {
             FragmentManager fragmentManager = getFragmentManager();

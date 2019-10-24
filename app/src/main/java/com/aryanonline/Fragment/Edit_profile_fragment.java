@@ -420,9 +420,15 @@ public class Edit_profile_fragment extends Fragment implements View.OnClickListe
         cart.setVisible(false);
         MenuItem change_pass = menu.findItem(com.aryanonline.R.id.action_change_password);
         change_pass.setVisible(true);
-        MenuItem search = menu.findItem(com.aryanonline.R.id.action_search);
-        search.setVisible(false);
-
+        MenuItem search = menu.findItem(R.id.action_search);
+//        search.setVisible(false);
+        search.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Toast.makeText(getActivity(), "searcehd clicked", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
         MenuItem wishlist = menu.findItem(R.id.action_wishlist);
         wishlist.setVisible(false);
 
@@ -437,6 +443,9 @@ public class Edit_profile_fragment extends Fragment implements View.OnClickListe
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(com.aryanonline.R.id.contentPanel, fm)
                         .addToBackStack(null).commit();
+                return false;
+                case R.id.action_search:
+                    Toast.makeText(getActivity(), "searcehd clicked", Toast.LENGTH_SHORT).show();
                 return false;
         }
         return false;

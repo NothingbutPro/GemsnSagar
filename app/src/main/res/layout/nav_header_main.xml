@@ -29,6 +29,12 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/logot"
+            android:src="@drawable/ic_exit2"
+            android:layout_weight="0.70"
+            android:layout_width="50dp"
+            android:layout_height="50dp"></ImageView>
         <TextView
             android:id="@+id/tv_header_name"
             android:layout_width="wrap_content"
@@ -40,10 +46,22 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_header_img" />
-
+    <LinearLayout
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header_name"
+        >
         <TextView
+            android:layout_weight="0.30"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:id="@+id/tv_header_moblie"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_5"
             android:text="Mo. 8530875124"
@@ -51,6 +69,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_header_name" />
 
+    </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>

@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.aryanonline">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".AppController"
         android:allowBackup="true"
@@ -10,9 +15,13 @@
         android:roundIcon="@drawable/aplogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ContactForms"
-            android:theme = "@style/AppTheme.NoActionBar"
-            ></activity>
+        <activity android:name=".Basic_by_PArag.MyAstrology"></activity>
+        <activity
+            android:name=".Basic_by_PArag.SerachFurtherActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ContactForms"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CheckoutActivity" />
         <activity android:name=".CompareActivity" />
         <activity
@@ -40,7 +49,6 @@
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize"
-            android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LoginActivity"
@@ -69,10 +77,5 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CustomDialogClass" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

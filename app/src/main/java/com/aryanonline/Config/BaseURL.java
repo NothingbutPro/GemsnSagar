@@ -116,6 +116,7 @@ public class BaseURL {
     public static String GET_SLIDERS = BASEURL2 +"/api/api/get_banner_image";
 
     public static final String IMG_PROFILE_URL = BASEURL2 + "/image/profile/";
+    public static final String SearchProduct = BASEURL2 + "/api/api/searchProduct";
 
     public static final String GET_LIMITE_SETTING_URL = BASEURL2 + "/api/api/get_limit_settings";
 

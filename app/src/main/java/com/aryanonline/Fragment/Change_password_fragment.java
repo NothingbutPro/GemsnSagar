@@ -24,6 +24,7 @@ import com.android.volley.VolleyLog;
 import com.aryanonline.AppController;
 import com.aryanonline.Config.BaseURL;
 import com.aryanonline.MainActivity;
+import com.aryanonline.R;
 import com.aryanonline.util.ConnectivityReceiver;
 import com.aryanonline.util.CustomVolleyJsonRequest;
 import com.aryanonline.util.Session_management;
@@ -220,8 +221,8 @@ public class Change_password_fragment extends Fragment {
         cart.setVisible(false);
         MenuItem change_pass = menu.findItem(com.aryanonline.R.id.action_change_password);
         change_pass.setVisible(false);
-        MenuItem search = menu.findItem(com.aryanonline.R.id.action_search);
-        search.setVisible(false);
+        MenuItem search = menu.findItem(R.id.action_search);
+//        search.setVisible(true);
 
     }
 

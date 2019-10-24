@@ -2,40 +2,48 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/action_search"
-        android:icon="@drawable/search_yellow"
-        android:title="@string/search_here"
-        android:visible="false"
-        app:showAsAction="ifRoom" />
+<!--    <item-->
+<!--        android:id="@+id/action_searchnon"-->
+<!--        android:icon="@drawable/search_yellow"-->
+<!--        android:title="@string/search_here"-->
+<!--        app:showAsAction="always"-->
+<!--        app:actionViewClass="android.widget.SearchView" />-->
+<!--    <item-->
+<!--        android:id="@+id/action_search"-->
+<!--        android:title="@string/search_here"-->
+<!--        app:showAsAction="always"-->
+<!--        android:icon="@drawable/ic_search_black_24dp"-->
+<!--        app:actionViewClass="android.support.v7.widget.SearchView"-->
 
+<!--        />-->
+
+
+    <item android:id="@+id/action_search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Searching"
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_wishlist"
-        android:icon="@drawable/like"
-        android:title="@string/search_here"
-        app:showAsAction="ifRoom" />
+        android:icon="@drawable/heatwish30px"
+        android:title="Fav"
+        app:showAsAction="always" />
 
-    <!--<item
-        android:id="@+id/action_search"
-        android:actionViewClass="android.widget.SearchView"
-        android:icon="@drawable/ic_search"
-        android:title="@string/search_here"
-        app:showAsAction="ifRoom|collapseActionView"
-        app:actionViewClass="android.support.v7.widget.SearchView" />-->
+
 
     <item
         android:id="@+id/action_cart"
         android:actionLayout="@layout/menu_cart_layout"
         android:title="@string/nav_home"
         app:actionLayout="@layout/menu_cart_layout"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         />
 
-    <item
-        android:id="@+id/action_change_password"
-        android:icon="@drawable/ic_change_password"
-        android:title="@string/change_password"
-        app:showAsAction="ifRoom" />
+        <item
+            android:visible="false"
+            android:id="@+id/action_change_password"
+            android:icon="@drawable/ic_change_password"
+            android:title="@string/change_password"
+            app:showAsAction="always" />
 
 </menu>
 

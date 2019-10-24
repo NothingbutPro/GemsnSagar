@@ -4,16 +4,19 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -124,7 +127,7 @@ public class Home_fragment extends Fragment {
         View view = inflater.inflate(com.aryanonline.R.layout.fragment_home, container, false);
         setHasOptionsMenu(true);
 
-        ((MainActivity) getActivity()).setTitle(getResources().getString(com.aryanonline.R.string.app_name));
+        ((MainActivity) getActivity()).setTitle("");
         ((MainActivity) getActivity()).updateHeader();
 
         // handle the touch event if true
@@ -220,7 +223,15 @@ public class Home_fragment extends Fragment {
         rv_items.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), rv_items, new RecyclerTouchListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
+                Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
 
+                //set toolbar appearance
+                toolbar.setBackgroundColor(Color.RED);
+
+                //for crate home button
+                AppCompatActivity activity = (AppCompatActivity) getActivity();
+                activity.setSupportActionBar(toolbar);
+                activity.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                 String getid = category_modelList.get(position).getId();
                 String getcat_title = category_modelList.get(position).getTitle();
 
